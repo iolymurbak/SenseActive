@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SenseActive — Academia Inteligente</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="/frontend/public/style.css" />
+</head>
+
+<body>
+
+  <!-- ANDROIDE DECORATIVO -->
+  <img src="/frontend/img/android-planos.png" class="android-fundo" alt="">
+
+
+  <header id="header">
+    <div class="header-container">
+      <div class="logo">
+        <a href="index.html">
+          <img src="/frontend/img/logo.png" alt="SenseActiv" />
+        </a>
+      </div>
+
+      <nav>
+        <ul id="navMenu">
+          <li class="main-item"><a href="index.html">Home</a></li>
+          <li class="main-item"><a href="sobre.html">Sobre</a></li>
+          <li class="main-item"><a href="cliente.html" target="_blank">Espaço do cliente</a></li>
+          <li class="main-item destaque"><a href="membro.html">Seja Membro</a></li>
+
+          <li class="hamburger-item"><a href="servicos.html" class="active">Serviços</a></li>
+          <li class="hamburger-item"><a href="planos.html">Planos</a></li>
+          <li class="hamburger-item"><a href="sustentabilidade.html">Sustentabilidade</a></li>
+        </ul>
+
+        <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
+          ☰
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="servicos-hero">
+      <h1>NOSSOS SERVIÇOS</h1>
+      <p>Tecnologia, performance e bem-estar em cada detalhe.</p>
+      <div class="linha-deco"></div>
+    </section>
+
+    <div class="experiencias-header">
+      <h2>EXPERIÊNCIAS <span>SENSEACTIVE</span></h2>
+      <p>Viva o treino. Sinta a energia. Evolua com a SenseActive.</p>
+    </div>
+
+    <!-- YOGA -->
+    <section class="modality-block">
+      <div class="modality-video">
+        <img src="/frontend/img/ioga.png" alt="Aula de Yoga">
+      </div>
+
+      <div class="modality-info">
+        <span class="mod-tag">YOGA</span>
+        <h3>YOGA</h3>
+        <div class="mod-frase">Respire. Conecte-se. Evolua.</div>
+        <p class="mod-desc">
+          Uma experiência voltada para equilíbrio, mobilidade, concentração e bem-estar.
+        </p>
+
+        <a href="cliente.html" class="btn">
+          AGENDAR MEU HORÁRIO <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </section>
+
+    <!-- FUNCIONAL -->
+    <section class="modality-block reverse">
+
+      <div class="modality-info">
+        <span class="mod-tag">FUNCIONAL</span>
+        <h3>FUNCIONAL</h3>
+        <div class="mod-frase">Supere seus limites.</div>
+
+        <p class="mod-desc">
+          Treinos dinâmicos para desenvolver força, resistência, coordenação e condicionamento.
+        </p>
+
+        <a href="cliente.html" class="btn">
+          AGENDAR MEU HORÁRIO <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+
+      <div class="modality-video">
+        <img src="/frontend/img/funcional.png" alt="Aula de Funcional">
+      </div>
+
+    </section>
+
+    <!-- FIT DANCE -->
+    <section class="modality-block">
+
+      <div class="modality-video">
+        <img src="/frontend/img/fitdance.png" alt="Aula de Fit Dance">
+      </div>
+
+      <div class="modality-info">
+        <span class="mod-tag">FIT DANCE</span>
+        <h3>FIT DANCE</h3>
+        <div class="mod-frase">Dance. Treine. Divirta-se.</div>
+
+        <p class="mod-desc">
+          Uma aula energética que combina dança, música e exercício em uma experiência divertida e intensa.
+        </p>
+
+        <a href="cliente.html" class="btn">
+          AGENDAR MEU HORÁRIO <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+
+    </section>
+
+    <!-- FRASE DE IMPACTO -->
+    <section class="frase-impacto">
+      <h2>MOVIMENTO QUE TRANSFORMA.</h2>
+      <p>Seu treino. Seu ritmo. Sua evolução.</p>
+      <div class="linha-verde"></div>
+    </section>
+
+    <!-- CALENDÁRIO -->
+    <section class="calendario-wrapper">
+
+      <div class="calendario-header">
+        <h2>AGENDE SUA <span>EXPERIÊNCIA</span></h2>
+
+        <p>
+          Escolha sua modalidade, encontre o melhor horário e venha treinar com a SenseActive.
+        </p>
+      </div>
+
+      <div class="cal-grid">
+
+        <!-- CALENDÁRIO -->
+        <div class="cal-box" id="calendario">
+
+          <div class="month-nav">
+            <button id="prevMonth">
+              <i class="fas fa-chevron-left"></i>
+            </button>
+
+            <span id="monthYear">Agosto 2026</span>
+
+            <button id="nextMonth">
+              <i class="fas fa-chevron-right"></i>
+            </button>
+          </div>
+
+          <div class="cal-dias-semana">
+            <span>SEG</span>
+            <span>TER</span>
+            <span>QUA</span>
+            <span>QUI</span>
+            <span>SEX</span>
+            <span>SÁB</span>
+            <span>DOM</span>
+          </div>
+
+          <div class="cal-dias" id="diasContainer">
+          </div>
+
+        </div>
+
+        <div class="cal-box" id="listaAulas">
+
+          <div class="dia-label" id="diaSelecionadoLabel">
+            QUINTA — 20 AGO
+          </div>
+
+          <div id="aulasContainer">
+          </div>
+
+          <a href="cliente.html" target="_blank"  class="btn-agendar-cal">
+            AGENDAR MEU HORÁRIO <i class="fas fa-arrow-right"></i>
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- SERVIÇOS -->
+    <section class="servicos-grade">
+
+      <div class="servico-card">
+        <i class="fas fa-brain"></i>
+        <h4>TREINO INTELIGENTE</h4>
+        <p>Planos personalizados com base em seus objetivos e desempenho.</p>
+      </div>
+
+      <div class="servico-card">
+        <i class="fas fa-chart-line"></i>
+        <h4>MONITORAMENTO DE DESEMPENHO</h4>
+        <p>Acompanhe sua evolução com métricas e relatórios detalhados.</p>
+      </div>
+
+      <div class="servico-card">
+        <i class="fas fa-users"></i>
+        <h4>AULAS EXCLUSIVAS</h4>
+        <p>Modalidades premium com professores especializados.</p>
+      </div>
+
+      <div class="servico-card">
+        <i class="fas fa-apple-alt"></i>
+        <h4>NUTRIÇÃO CONECTADA</h4>
+        <p>Orientação nutricional integrada ao seu plano de treino.</p>
+      </div>
+
+      <div class="servico-card">
+        <i class="fas fa-mobile-alt"></i>
+        <h4>APP SENSEACTIVE</h4>
+        <p>Gerencie treinos, horários e desempenho direto do seu celular.</p>
+      </div>
+
+      <div class="servico-card">
+        <i class="fas fa-shield-alt"></i>
+        <h4>SEGURANÇA E BEM-ESTAR</h4>
+        <p>Ambiente seguro, acolhedor e com suporte especializado.</p>
+      </div>
+
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="cta-final">
+
+      <h2>PRONTO PARA COMEÇAR?</h2>
+
+      <p>
+        Escolha seu treino, encontre seu horário e faça parte da experiência SenseActive.
+      </p>
+
+      <div class="linha-verde"></div>
+
+      <a href="cliente.html" target="_blank" class="btn">
+        AGENDAR MEU HORÁRIO <i class="fas fa-arrow-right"></i>
+      </a>
+
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+
+    <div class="footer-container">
+
+      <div class="footer-logo">
+        <a href="index.html">
+          <img src="/frontend/img/logo.png" alt="SenseActiv">
+        </a>
+      </div>
+
+      <div class="footer-links">
+
+        <div class="footer-column">
+          <h3>NAVEGAÇÃO</h3>
+
+          <a href="index.html">Home</a>
+          <a href="sobre.html">Sobre</a>
+          <a href="cliente.html" target="_blank">Espaço do cliente</a>
+          <a href="membro.html">Seja Membro</a>
+        </div>
+
+        <div class="footer-column">
+          <h3>EXPLORE</h3>
+
+          <a href="servicos.html">Serviços</a>
+          <a href="planos.html">Planos</a>
+          <a href="sustentabilidade.html">Sustentabilidade</a>
+        </div>
+
+        <div class="footer-column footer-contact">
+
+          <h3>CONTATO</h3>
+
+          <a href="tel:+5511999999999">
+            (11) 99999-9999
+          </a>
+
+          <a href="mailto:contato@senseactiv.com.br">
+            contato@senseactiv.com.br
+          </a>
+
+          <p>
+            R. Alfredo Massareti, 191 - Lot. Rei de Ouro
+          </p>
+
+          <p>
+            Itatiba - SP, 13251-360
+          </p>
+
+        </div>
+
+        <div class="footer-social-column">
+
+          <h3>REDES SOCIAIS</h3>
+
+          <div class="social-icons">
+
+            <a href="https://www.instagram.com/" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+
+            <a href="https://web.whatsapp.com/" aria-label="WhatsApp">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+
+            <a href="https://www.tiktok.com/pt-BR/" aria-label="TikTok">
+              <i class="fab fa-tiktok"></i>
+            </a>
+
+            <a href="https://www.youtube.com/" aria-label="YouTube">
+              <i class="fab fa-youtube"></i>
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+
+        <p>
+          © 2026 SenseActiv. Todos os direitos reservados.
+        </p>
+
+        <p>
+          CNPJ: 00.000.000/0000-00
+        </p>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+  <script src="/frontend/public/script.js"></script>
+
+</body>
+
+</html>

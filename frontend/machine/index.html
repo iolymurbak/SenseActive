@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SenseActiv | Máquina</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="panel">
+        <div class="title">Máquina Inteligente · FLY</div>
+        <div class="muted">Aproxime a pulseira para carregar os detalhes do treino.</div>
+        <div id="result" class="card">Aguardando leitura...</div>
+    </div>
+    <script>
+        async function identify(uid) {
+            const res = await fetch('/api/machines/identify', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ uid, machine_name: 'FLY' }) });
+            const data = await res.json();
+            if (data.approved) {
+                document.getElementById('result').innerHTML = `<h2>${data.user.full_name}</h2><p>Exercício: ${data.exercise.name}</p><p>Séries: ${data.exercise.default_series} · Repetições: ${data.exercise.default_repetitions} · Carga: ${data.exercise.default_carga}kg</p>`;
+            } else {
+                document.getElementById('result').innerHTML = `<p>${data.reason || 'Tag inválida.'}</p>`;
+            }
+        }
+        setTimeout(() => identify('A1B2C3'), 900);
+    </script>
+</body>
+
+</html>

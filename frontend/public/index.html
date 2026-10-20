@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>SenseActive — Academia Inteligente</title>
+
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <link rel="stylesheet" href="/frontend/public/style.css" />
+</head>
+
+<body>
+    <!-- ANDROIDE DECORATIVO -->
+  <img src="/frontend/img/android-planos.png" class="android-fundo" alt="">
+
+  <!-- ==================== HEADER ==================== -->
+
+  <header id="header">
+
+    <div class="header-container">
+
+      <div class="logo">
+        <a href="index.html">
+          <img src="/frontend/img/logo.png" alt="SenseActiv" />
+        </a>
+      </div>
+
+      <nav>
+
+        <ul id="navMenu">
+
+          <li class="main-item">
+            <a href="index.html" class="active">Home</a>
+          </li>
+
+          <li class="main-item">
+            <a href="sobre.html">Sobre</a>
+          </li>
+
+          <li class="main-item">
+            <a href="cliente.html" target="_blank">Espaço do cliente</a>
+          </li>
+
+          <li class="main-item destaque">
+            <a href="membro.html">Seja Membro</a>
+          </li>
+
+          <li class="hamburger-item">
+            <a href="servicos.html">Serviços</a>
+          </li>
+
+          <li class="hamburger-item">
+            <a href="planos.html">Planos</a>
+          </li>
+
+          <li class="hamburger-item">
+            <a href="sustentabilidade.html">Sustentabilidade</a>
+          </li>
+
+        </ul>
+
+        <button
+          class="hamburger"
+          id="hamburgerBtn"
+          aria-label="Menu"
+          type="button">
+          ☰
+        </button>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+  <!-- ==================== HERO ==================== -->
+
+  <div class="video-container">
+
+    <video id="bgVideo" autoplay muted loop playsinline>
+
+      <source
+        src="/frontend/img/video.mp4"
+        type="video/mp4">
+
+    </video>
+
+    <div class="video-overlay"></div>
+
+
+    <div class="hero-content">
+
+      <span class="hero-label">
+        TECNOLOGIA, PERFORMANCE E BEM-ESTAR
+      </span>
+
+      <h1>
+        Experiência com academia inteligente
+      </h1>
+
+      <p>
+        Uma plataforma integrada para melhor desempenho
+        e experiência de usuário.
+      </p>
+
+      <div class="hero-buttons">
+
+        <a href="sobre.html" class="btn btn-outline">
+          Conheça a SenseActive
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- ==================== CONTEÚDO ==================== -->
+
+  <main class="content-below">
+
+
+    <!-- ==================== PLANOS ==================== -->
+
+    <section class="home-section planos-home">
+
+      <div class="hero-copy">
+
+        <h1>
+          Nossos Planos Anuais
+        </h1>
+
+        <p>
+          Quanto maior o compromisso, maior a sua economia.
+          Escolha o plano ideal para sua rotina!
+        </p>
+
+        <div class="linha-deco"></div>
+
+      </div>
+
+
+      <div class="cards">
+
+
+        <!-- PLANO MASTER -->
+
+        <div class="card plano-card">
+
+          <div class="plano-topo">
+
+            <span class="plano-tipo">
+              COMPLETO
+            </span>
+
+            <h2>
+              Plano Master
+            </h2>
+
+          </div>
+
+
+          <p class="plano-descricao">
+
+            A experiência completa da SenseActiv.
+            Tenha acesso a todas as academias e aos
+            recursos tecnológicos exclusivos para
+            acompanhar sua evolução.
+
+          </p>
+
+
+          <div class="beneficios">
+
+            <p>✓ Acesso completo às academias SenseActiv</p>
+
+            <p>✓ Monitoramento inteligente dos treinos</p>
+
+            <p>✓ Acompanhamento de desempenho</p>
+
+            <p>✓ Recursos tecnológicos exclusivos</p>
+
+          </div>
+
+
+          <div class="plano-preco">
+
+            <span class="preco">
+              R$ 0,00
+            </span>
+
+            <span class="preco-periodo">
+              /mês
+            </span>
+
+          </div>
+
+
+          <p class="fidelidade">
+            12 meses de fidelidade
+          </p>
+
+
+          <p class="economia">
+            Economize R$ 0,00 no ano
+          </p>
+
+
+          <a href="planos.html" class="btn plano-btn">
+            Contrate agora
+          </a>
+
+        </div>
+
+
+        <!-- PLANO PREMIUM -->
+
+        <div class="card plano-card plano-destaque">
+
+          <span class="mais-popular">
+            ★ MAIS POPULAR
+          </span>
+
+
+          <div class="plano-topo">
+
+            <span class="plano-tipo">
+              EQUILIBRADO
+            </span>
+
+            <h2>
+              Plano Premium
+            </h2>
+
+          </div>
+
+
+          <p class="plano-descricao">
+
+            Mais tecnologia para potencializar seus
+            treinos, com recursos inteligentes para
+            acompanhar seu desempenho e evolução.
+
+          </p>
+
+
+          <div class="beneficios">
+
+            <p>✓ Acesso às academias SenseActiv</p>
+
+            <p>✓ Monitoramento dos treinos</p>
+
+            <p>✓ Acompanhamento de desempenho</p>
+
+            <p>✓ Recursos tecnológicos avançados</p>
+
+          </div>
+
+
+          <div class="plano-preco">
+
+            <span class="preco">
+              R$ 0,00
+            </span>
+
+            <span class="preco-periodo">
+              /mês
+            </span>
+
+          </div>
+
+
+          <p class="fidelidade">
+            12 meses de fidelidade
+          </p>
+
+
+          <p class="economia">
+            Economize R$ 0,00 no ano
+          </p>
+
+
+          <a href="planos.html" class="btn plano-btn">
+            Contrate agora
+          </a>
+
+        </div>
+
+
+        <!-- PLANO BASIC -->
+
+        <div class="card plano-card">
+
+          <div class="plano-topo">
+
+            <span class="plano-tipo">
+              ESSENCIAL
+            </span>
+
+            <h2>
+              Plano Basic
+            </h2>
+
+          </div>
+
+
+          <p class="plano-descricao">
+
+            A opção ideal para quem busca qualidade
+            e tecnologia para tornar seus treinos
+            mais práticos e eficientes.
+
+          </p>
+
+
+          <div class="beneficios">
+
+            <p>✓ Acesso à academia</p>
+
+            <p>✓ Equipamentos tecnológicos</p>
+
+            <p>✓ Acompanhamento básico dos treinos</p>
+
+            <p>✓ Acesso ao ambiente SenseActiv</p>
+
+          </div>
+
+
+          <div class="plano-preco">
+
+            <span class="preco">
+              R$ 0,00
+            </span>
+
+            <span class="preco-periodo">
+              /mês
+            </span>
+
+          </div>
+
+
+          <p class="fidelidade">
+            12 meses de fidelidade
+          </p>
+
+
+          <p class="economia">
+            Economize R$ 0,00 no ano
+          </p>
+
+
+          <a href="planos.html" class="btn plano-btn">
+            Contrate agora
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="button-index">
+
+        <a href="planos.html" class="btn">
+          Veja todos os Planos
+        </a>
+
+      </div>
+
+
+      <div class="hero-copy disclaimer">
+
+        <p>
+          Os preços, taxas, itens de benefícios e condições
+          promocionais podem variar de acordo com a academia escolhida.
+        </p>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ==================== DESTAQUE ==================== -->
+
+    <section class="home-highlight">
+
+      <div class="highlight-content">
+
+        <span class="section-label">
+          MAIS QUE UMA ACADEMIA
+        </span>
+
+        <h2>
+          Tecnologia que acompanha sua evolução.
+        </h2>
+
+        <p>
+          Na SenseActive, tecnologia e bem-estar trabalham
+          juntos para tornar cada treino mais inteligente,
+          personalizado e eficiente.
+        </p>
+
+        <a href="sobre.html" class="btn">
+          Descubra como funciona
+        </a>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ==================== TREINOS ==================== -->
+
+    <section class="home-section treinos-index">
+
+      <div class="hero-copy">
+
+        <h1>
+          Aulas e treinos exclusivos
+        </h1>
+
+      </div>
+
+
+      <div class="cards">
+
+
+        <!-- FUNCIONAL -->
+
+        <div class="card treino-card">
+
+          <div class="img-servico">
+
+            <img
+              src="/frontend/img/funcional.jpg"
+              alt="Treino Funcional" />
+
+          </div>
+
+
+          <div class="activity-name">
+            Treino Funcional
+          </div>
+
+
+          <div class="info-icons">
+
+            <div class="info-item">
+
+              <i class="fas fa-clock"></i>
+
+              <span class="value">
+                45 min
+              </span>
+
+              <span>
+                Duração
+              </span>
+
+            </div>
+
+
+            <div class="info-item">
+
+              <i class="fas fa-bolt"></i>
+
+              <span class="value">
+                Alta
+              </span>
+
+              <span>
+                Intensidade
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <div class="divider-light"></div>
+
+
+          <p class="card-text">
+
+            Descubra o poder do treino funcional
+            e maximize seu potencial de força e resistência!
+
+          </p>
+
+
+          <a href="servicos.html" class="btn">
+            Saiba mais
+          </a>
+
+        </div>
+
+
+
+        <!-- FITDANCE -->
+
+        <div class="card treino-card">
+
+          <div class="img-servico">
+
+            <img
+              src="/frontend/img/fitdance.jpg"
+              alt="FitDance" />
+
+          </div>
+
+
+          <div class="activity-name">
+            FitDance
+          </div>
+
+
+          <div class="info-icons">
+
+            <div class="info-item">
+
+              <i class="fas fa-clock"></i>
+
+              <span class="value">
+                50 min
+              </span>
+
+              <span>
+                Duração
+              </span>
+
+            </div>
+
+
+            <div class="info-item">
+
+              <i class="fas fa-bolt"></i>
+
+              <span class="value">
+                Média
+              </span>
+
+              <span>
+                Intensidade
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <div class="divider-light"></div>
+
+
+          <p class="card-text">
+
+            Descubra o poder do fitdance
+            e maximize seu potencial de coordenação e energia!
+
+          </p>
+
+
+          <a href="servicos.html" class="btn">
+            Saiba mais
+          </a>
+
+        </div>
+
+
+
+        <!-- YOGA -->
+
+        <div class="card treino-card">
+
+          <div class="img-servico">
+
+            <img
+              src="/frontend/img/yoga.jpg"
+              alt="Yoga" />
+
+          </div>
+
+
+          <div class="activity-name">
+            Yoga
+          </div>
+
+
+          <div class="info-icons">
+
+            <div class="info-item">
+
+              <i class="fas fa-clock"></i>
+
+              <span class="value">
+                60 min
+              </span>
+
+              <span>
+                Duração
+              </span>
+
+            </div>
+
+
+            <div class="info-item">
+
+              <i class="fas fa-bolt"></i>
+
+              <span class="value">
+                Baixa
+              </span>
+
+              <span>
+                Intensidade
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <div class="divider-light"></div>
+
+
+          <p class="card-text">
+
+            Descubra o poder do yoga
+            e maximize seu potencial de flexibilidade e bem-estar!
+
+          </p>
+
+
+          <a href="servicos.html" class="btn">
+            Saiba mais
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- BOTÃO SEJA MEMBRO -->
+
+      <div class="button-index">
+
+        <a href="membro.html" class="btn">
+          Seja Membro
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+
+  <!-- ==================== FOOTER ==================== -->
+
+  <footer class="footer">
+
+    <div class="footer-container">
+
+
+      <div class="footer-logo">
+
+        <a href="index.html">
+
+          <img
+            src="/frontend/img/logo.png"
+            alt="SenseActiv">
+
+        </a>
+
+      </div>
+
+
+      <div class="footer-links">
+
+
+        <!-- NAVEGAÇÃO -->
+
+        <div class="footer-column">
+
+          <h3>
+            Navegação
+          </h3>
+
+          <a href="index.html">
+            Home
+          </a>
+
+          <a href="sobre.html">
+            Sobre
+          </a>
+
+          <a href="cliente.html" target="_blank">
+            Espaço do cliente
+          </a>
+
+          <a href="membro.html">
+            Seja Membro
+          </a>
+
+        </div>
+
+
+        <!-- EXPLORE -->
+
+        <div class="footer-column">
+
+          <h3>
+            Explore
+          </h3>
+
+          <a href="servicos.html">
+            Serviços
+          </a>
+
+          <a href="planos.html">
+            Planos
+          </a>
+
+          <a href="sustentabilidade.html">
+            Sustentabilidade
+          </a>
+
+        </div>
+
+
+        <!-- CONTATO -->
+
+        <div class="footer-column footer-contact">
+
+          <h3>
+            Contato
+          </h3>
+
+          <a href="tel:+5511999999999">
+            (11) 99999-9999
+          </a>
+
+          <a href="mailto:contato@senseactiv.com.br">
+            contato@senseactiv.com.br
+          </a>
+
+          <p>
+            R. Alfredo Massareti, 191 - Lot. Rei de Ouro
+          </p>
+
+          <p>
+            Itatiba - SP, 13251-360
+          </p>
+
+        </div>
+
+
+        <!-- REDES SOCIAIS -->
+
+        <div class="footer-social-column">
+
+          <h3>
+            Redes Sociais
+          </h3>
+
+
+          <div class="social-icons">
+
+            <a
+              href="https://www.instagram.com/"
+              aria-label="Instagram">
+
+              <i class="fab fa-instagram"></i>
+
+            </a>
+
+
+            <a
+              href="https://web.whatsapp.com/"
+              aria-label="WhatsApp">
+
+              <i class="fab fa-whatsapp"></i>
+
+            </a>
+
+
+            <a
+              href="https://www.tiktok.com/pt-BR/"
+              aria-label="TikTok">
+
+              <i class="fab fa-tiktok"></i>
+
+            </a>
+
+
+            <a
+              href="https://www.youtube.com/"
+              aria-label="YouTube">
+
+              <i class="fab fa-youtube"></i>
+
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- FOOTER BOTTOM -->
+
+      <div class="footer-bottom">
+
+        <p>
+          © 2026 SenseActiv. Todos os direitos reservados.
+        </p>
+
+        <p>
+          CNPJ: 00.000.000/0000-00
+        </p>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- ==================== JAVASCRIPT ==================== -->
+
+  <script src="/frontend/public/script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SenseActiv Admin</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>SenseActiv — Painel Administrador</h1>
+        <div class="card">
+            <h2>Dashboard</h2>
+            <div id="dashboard" class="grid"></div>
+        </div>
+        <div class="card">
+            <h2>Criar treino</h2>
+            <input id="userId" placeholder="ID do aluno" />
+            <input id="workoutName" placeholder="Nome do treino" />
+            <input id="workoutDesc" placeholder="Descrição" />
+            <button onclick="createWorkout()">Criar treino</button>
+            <div id="workoutResult"></div>
+        </div>
+        <div class="card">
+            <h2>Usuários</h2>
+            <div id="users"></div>
+        </div>
+    </div>
+    <script>
+        async function loadDashboard() {
+            const token = localStorage.getItem('token') || '';
+            const res = await fetch('/api/dashboard/admin', { headers: { Authorization: `Bearer ${token}` } });
+            const data = await res.json();
+            document.getElementById('dashboard').innerHTML = Object.entries(data).map(([k, v]) => `<div class="card"><strong>${k}</strong><div>${v}</div></div>`).join('');
+        }
+        async function createWorkout() {
+            const token = localStorage.getItem('token') || '';
+            const payload = {
+                user_id: Number(document.getElementById('userId').value),
+                name: document.getElementById('workoutName').value,
+                description: document.getElementById('workoutDesc').value,
+                exercises: [{ exercise_id: 1, series: 3, repetitions: 12, carga: 30, rest_seconds: 60 }]
+            };
+            const res = await fetch('/api/workouts', { method: 'POST', headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` }, body: JSON.stringify(payload) });
+            const data = await res.json();
+            document.getElementById('workoutResult').innerText = JSON.stringify(data);
+            loadUsers();
+        }
+        async function loadUsers() {
+            const token = localStorage.getItem('token') || '';
+            const res = await fetch('/api/users', { headers: { Authorization: `Bearer ${token}` } });
+            const users = await res.json();
+            document.getElementById('users').innerHTML = users.map(u => `<div class="card">${u.full_name} — ${u.email}</div>`).join('');
+        }
+        (async function init() {
+            const token = prompt('Informe o token de administrador');
+            if (token) localStorage.setItem('token', token);
+            await loadDashboard();
+            await loadUsers();
+        })();
+    </script>
+</body>
+
+</html>

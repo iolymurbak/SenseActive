@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>SenseActive — Login do Cliente</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        /* ===== LOGIN PAGE OVERRIDES ===== */
+        .login-page {
+            min-height: 100vh;
+            background: #080808;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 32px 24px;
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        .login-page .login-logo {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .login-page .login-logo .logo-icon {
+            width: 72px;
+            height: 72px;
+            border-radius: 50px;
+            background: linear-gradient(135deg, #00e5a0, #00c4ff);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 18px;
+            box-shadow: 0 8px 32px rgba(0, 229, 160, 0.2);
+        }
+
+        .login-page .login-logo h1 {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 30px;
+            font-weight: 800;
+            letter-spacing: 0.12em;
+            color: #f0f0f0;
+            margin: 0;
+        }
+
+        .login-page .login-logo p {
+            color: #00e5a0;
+            font-size: 11px;
+            letter-spacing: 0.25em;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 600;
+            margin-top: 4px;
+        }
+
+        .login-page .login-form {
+            width: 100%;
+            max-width: 360px;
+        }
+
+        .login-page .login-form h2 {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 26px;
+            font-weight: 700;
+            color: #f0f0f0;
+            margin-bottom: 4px;
+        }
+
+        .login-page .login-form .login-sub {
+            color: #555;
+            font-size: 14px;
+            margin-bottom: 28px;
+        }
+
+        .login-page .input-group {
+            margin-bottom: 16px;
+        }
+
+        .login-page .input-group label {
+            display: block;
+            color: #555;
+            font-size: 11px;
+            letter-spacing: 0.1em;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+        }
+
+        .login-page .input-group input {
+            width: 100%;
+            background: #111;
+            border: 1px solid #1f1f1f;
+            border-radius: 10px;
+            padding: 14px 16px;
+            color: #f0f0f0;
+            font-size: 15px;
+            font-family: 'DM Sans', sans-serif;
+            outline: none;
+            box-sizing: border-box;
+            transition: border-color 0.2s;
+        }
+
+        .login-page .input-group input:focus {
+            border-color: #00e5a0;
+        }
+
+        .login-page .password-wrapper {
+            position: relative;
+        }
+
+        .login-page .password-wrapper input {
+            padding-right: 48px;
+        }
+
+        .login-page .toggle-password {
+            position: absolute;
+            right: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            padding: 0;
+            cursor: pointer;
+            opacity: 0.6;
+            transition: opacity 0.2s;
+        }
+
+        .login-page .toggle-password:hover {
+            opacity: 1;
+        }
+
+        .login-page .forgot-password {
+            text-align: right;
+            margin-bottom: 28px;
+        }
+
+        .login-page .forgot-password button {
+            color: #00e5a0;
+            font-size: 13px;
+            font-family: 'DM Sans', sans-serif;
+            background: none;
+            border: none;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+
+        .login-page .forgot-password button:hover {
+            opacity: 0.7;
+        }
+
+        .login-page .btn-primary {
+            width: 100%;
+            background: rgb(121, 224, 178);
+            border: none;
+            border-radius: 10px;
+            padding: 16px;
+            color: #080808;
+            font-size: 15px;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            cursor: pointer;
+            transition: opacity 0.2s, transform 0.15s;
+        }
+
+        .login-page .btn-primary:hover {
+            opacity: 0.85;
+        }
+
+        .login-page .btn-primary:active {
+            transform: scale(0.98);
+        }
+
+        .login-page .btn-primary:disabled {
+            opacity: 0.5;
+            cursor: default;
+            transform: none;
+        }
+
+        .login-page .login-error {
+            background: rgba(255, 50, 50, 0.12);
+            border: 1px solid rgba(255, 50, 50, 0.25);
+            border-radius: 10px;
+            padding: 12px 16px;
+            color: #ff6b6b;
+            font-size: 13px;
+            margin-bottom: 16px;
+            display: none;
+            text-align: center;
+        }
+
+        .login-page .login-error.show {
+            display: block;
+            animation: fadeSlide 0.25s ease;
+        }
+
+        @keyframes fadeSlide {
+            from {
+                opacity: 0;
+                transform: translateY(-8px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .login-page header {
+            display: none;
+        }
+
+        @media (max-width: 400px) {
+            .login-page .login-logo h1 {
+                font-size: 26px;
+            }
+
+            .login-page .login-form h2 {
+                font-size: 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ===== TELA DE LOGIN ===== -->
+    <div class="login-page" id="loginPage">
+        <div class="login-logo">
+            <div
+                style="width:72px;height:72px;border-radius:50%;overflow:hidden;display:flex;align-items:center;justify-content:center;background:transparent;margin:0 auto 18px;">
+                <img src="/frontend/img/Logo_SA.png" alt="SenseActive"
+                    style="width:100%;height:100%;object-fit:cover;" />
+            </div>
+            <h1>SENSE ACTIVE</h1>
+            <p>ACADEMIA INTELIGENTE</p>
+        </div>
+
+        <div class="login-form">
+            <h2>Bem-vindo de volta!</h2>
+            <p class="login-sub">Seu treino. Seus dados. Seus resultados.</p>
+
+            <div class="login-error" id="loginError">Credenciais inválidas. Tente novamente.</div>
+
+            <div class="input-group">
+                <label>E-mail</label>
+                <input type="email" id="loginEmail" placeholder="seu@email.com" autocomplete="email" />
+            </div>
+
+            <div class="input-group">
+                <label>Senha</label>
+                <div class="password-wrapper">
+                    <input type="password" id="loginPassword" placeholder="••••••••" autocomplete="current-password" />
+                    <button class="toggle-password" id="togglePass" aria-label="Mostrar senha" type="button">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                            <path d="M1 12C1 12 5 4 12 4C19 4 23 12 23 12C23 12 19 20 12 20C5 20 1 12 1 12Z"
+                                stroke="#555" stroke-width="1.8" />
+                            <circle cx="12" cy="12" r="3" stroke="#555" stroke-width="1.8" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <div class="forgot-password">
+                <button id="forgotBtn" type="button">Esqueci minha senha</button>
+            </div>
+
+            <button class="btn-primary" id="loginBtn">ENTRAR</button>
+        </div>
+    </div>
+
+    <script>
+        (function () {
+            "use strict";
+
+            // ─── DOM REFS ──────────────────────────────────────────────
+            const emailInput = document.getElementById("loginEmail");
+            const passInput = document.getElementById("loginPassword");
+            const loginBtn = document.getElementById("loginBtn");
+            const togglePass = document.getElementById("togglePass");
+            const forgotBtn = document.getElementById("forgotBtn");
+            const errorBox = document.getElementById("loginError");
+
+            // ─── CREDENCIAIS ──────────────────────────────────────────
+            const VALID_CREDENTIALS = [
+                { email: "ana@email.com", password: "123456" },
+                { email: "joao@email.com", password: "123456" },
+                { email: "admin@senseactive.com", password: "admin123" },
+            ];
+
+            // ─── REDIRECIONAMENTO CORRETO ─────────────────────────────
+
+            function getRedirectionPath() {
+                const currentPath = window.location.pathname;
+                console.log('Caminho atual:', currentPath);
+
+                // Se está em /frontend/public/cliente.html
+                if (currentPath.includes('/frontend/public/')) {
+                    return '/frontend/user/index.html';
+                }
+
+                // Se está em /public/cliente.html
+                if (currentPath.includes('/public/cliente.html')) {
+                    return '../user/index.html';
+                }
+
+                // Se está em /cliente.html (raiz)
+                if (currentPath === '/cliente.html' || currentPath === '/cliente') {
+                    return 'user/index.html';
+                }
+
+                // Fallback
+                return '../user/index.html';
+            }
+
+            // ─── FUNÇÕES DE LOGIN ─────────────────────────────────────
+
+            function showError(message) {
+                errorBox.textContent = message || "Credenciais inválidas. Tente novamente.";
+                errorBox.classList.add("show");
+            }
+
+            function hideError() {
+                errorBox.classList.remove("show");
+            }
+
+            function validateCredentials(email, password) {
+                return VALID_CREDENTIALS.some(
+                    (cred) => cred.email === email && cred.password === password
+                );
+            }
+
+            function handleLogin() {
+                const email = emailInput.value.trim();
+                const password = passInput.value.trim();
+
+                if (!email || !password) {
+                    showError("Preencha e-mail e senha.");
+                    return;
+                }
+
+                if (!email.includes("@") || !email.includes(".")) {
+                    showError("Digite um e-mail válido.");
+                    return;
+                }
+
+                hideError();
+
+                loginBtn.disabled = true;
+                loginBtn.textContent = "ENTRANDO...";
+
+                setTimeout(() => {
+                    const isValid = validateCredentials(email, password);
+
+                    if (isValid) {
+                        sessionStorage.setItem("senseactive_user", JSON.stringify({
+                            email: email,
+                            name: email.split("@")[0].charAt(0).toUpperCase() +
+                                email.split("@")[0].slice(1),
+                            loggedIn: true,
+                            loginTime: new Date().toISOString(),
+                        }));
+
+                        const redirectPath = getRedirectionPath();
+                        console.log('🚀 Redirecionando para:', redirectPath);
+                        window.location.href = redirectPath;
+
+                    } else {
+                        showError("E-mail ou senha incorretos.");
+                        loginBtn.disabled = false;
+                        loginBtn.textContent = "ENTRAR";
+                    }
+                }, 800);
+            }
+
+            // ─── TOGGLE PASSWORD ──────────────────────────────────────
+
+            togglePass.addEventListener("click", function () {
+                const isPassword = passInput.type === "password";
+                passInput.type = isPassword ? "text" : "password";
+                this.innerHTML = isPassword ?
+                    `<svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                            <path d="M17.94 17.94A10.07 10.07 0 0112 20C5 20 1 12 1 12A18.45 18.45 0 015.06 5.06M9.9 4.24A9.12 9.12 0 0112 4C19 4 23 12 23 12A18.5 18.5 0 0120.94 15.94" stroke="#555" stroke-width="1.8" stroke-linecap="round"/>
+                            <path d="M3 3L21 21" stroke="#555" stroke-width="1.8" stroke-linecap="round"/>
+                        </svg>` :
+                    `<svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                            <path d="M1 12C1 12 5 4 12 4C19 4 23 12 23 12C23 12 19 20 12 20C5 20 1 12 1 12Z" stroke="#555" stroke-width="1.8"/>
+                            <circle cx="12" cy="12" r="3" stroke="#555" stroke-width="1.8"/>
+                        </svg>`;
+            });
+
+            // ─── EVENTOS ──────────────────────────────────────────────
+
+            loginBtn.addEventListener("click", handleLogin);
+
+            emailInput.addEventListener("keydown", (e) => {
+                if (e.key === "Enter") handleLogin();
+            });
+            passInput.addEventListener("keydown", (e) => {
+                if (e.key === "Enter") handleLogin();
+            });
+
+            forgotBtn.addEventListener("click", function () {
+                alert("Entre em contato com a recepção da SenseActive para redefinir sua senha.\n\n (11) 99999-9999");
+            });
+
+            emailInput.addEventListener("input", hideError);
+            passInput.addEventListener("input", hideError);
+
+            // ─── VERIFICA SESSÃO EXISTENTE ───────────────────────────
+
+            const session = sessionStorage.getItem("senseactive_user");
+            if (session) {
+                try {
+                    const data = JSON.parse(session);
+                    if (data.loggedIn) {
+                        const redirectPath = getRedirectionPath();
+                        console.log('Sessão ativa, redirecionando para:', redirectPath);
+                        window.location.href = redirectPath;
+                    }
+                } catch (_) { /* ignora */ }
+            }
+
+        })();
+    </script>
+
+</body>
+
+</html>

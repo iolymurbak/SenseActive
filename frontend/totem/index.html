@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SenseActiv | Totem</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="panel">
+        <div class="brand">Sense<span>Activ</span></div>
+        <div class="subtitle">Aproxime sua pulseira ou cartão para iniciar a experiência.</div>
+        <div class="chip">Leitura automática por RFID</div>
+        <div id="result" class="result">Aguardando identificação...</div>
+    </div>
+    <script>
+        async function identify(uid) {
+            const res = await fetch('/api/rfid/identify', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ uid }) });
+            const data = await res.json();
+            if (data.approved) {
+                document.getElementById('result').innerHTML = `<h2>Olá, ${data.user.full_name}</h2><p>Bem-vindo à academia.</p><p>Treino do dia disponível.</p>`;
+            } else {
+                document.getElementById('result').innerHTML = `<h2>Acesso não identificado</h2><p>Por favor, aproxime uma tag válida.</p>`;
+            }
+        }
+        const demoUid = 'A1B2C3';
+        setTimeout(() => identify(demoUid), 800);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,2814 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>SenseActive — Seja Membro</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <!-- CSS principal -->
+  <link rel="stylesheet" href="/frontend/public/style.css" />
+</head>
+
+<body>
+
+  <!-- ==========================================================
+       HEADER
+  =========================================================== -->
+
+  <header id="header">
+
+    <div class="header-container">
+
+      <div class="logo">
+        <a href="index.html">
+          <img src="/frontend/img/logo.png" alt="SenseActiv" />
+        </a>
+      </div>
+
+      <nav>
+
+        <ul id="navMenu">
+
+          <li class="main-item">
+            <a href="index.html">Home</a>
+          </li>
+
+          <li class="main-item">
+            <a href="sobre.html">Sobre</a>
+          </li>
+
+          <li class="main-item">
+            <a href="cliente.html" target="_blank">
+              Espaço do cliente
+            </a>
+          </li>
+
+          <li class="main-item destaque">
+            <a href="membro.html" class="active">
+              Seja Membro
+            </a>
+          </li>
+
+          <li class="hamburger-item">
+            <a href="servicos.html">Serviços</a>
+          </li>
+
+          <li class="hamburger-item">
+            <a href="planos.html">Planos</a>
+          </li>
+
+          <li class="hamburger-item">
+            <a href="sustentabilidade.html">
+              Sustentabilidade
+            </a>
+          </li>
+
+        </ul>
+
+        <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
+          ☰
+        </button>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+  <!-- ==========================================================
+       CONTEÚDO PRINCIPAL
+  =========================================================== -->
+
+  <main>
+
+    <div class="content-below" style="padding-top: 120px;">
+
+      <!-- ======================================================
+           HERO
+      ======================================================= -->
+
+      <div class="hero-copy">
+
+        <h1>Seja Membro SenseActive</h1>
+
+        <p>
+          Faça parte da revolução do fitness inteligente.
+          Escolha o plano que mais combina com você e transforme
+          seus treinos.
+        </p>
+
+        <div class="linha-deco"></div>
+
+      </div>
+
+
+      <!-- ======================================================
+           ÁREA DO FORMULÁRIO
+      ======================================================= -->
+
+      <div class="member-form-container">
+
+        <!-- ====================================================
+             FORMULÁRIO
+        ===================================================== -->
+
+        <div class="member-form-wrapper">
+
+          <h2>Comece agora mesmo!</h2>
+
+          <p>
+            Preencha seus dados e dê o primeiro passo para
+            uma nova experiência.
+          </p>
+
+
+          <form id="memberForm" class="member-form" novalidate>
+
+            <!-- ==================================================
+                 NOME + DATA DE NASCIMENTO
+            =================================================== -->
+
+            <div class="form-row">
+
+              <div class="form-group">
+
+                <label for="fullName">
+                  <i class="fas fa-user"></i>
+                  Nome completo
+                </label>
+
+                <input type="text" id="fullName" placeholder="Seu nome completo" autocomplete="name" required />
+
+              </div>
+
+
+              <div class="form-group">
+
+                <label for="birthDate">
+                  <i class="fas fa-calendar-alt"></i>
+                  Data de nascimento
+                </label>
+
+                <input type="date" id="birthDate" autocomplete="bday" required />
+
+              </div>
+
+            </div>
+
+
+            <!-- ==================================================
+                 E-MAIL + TELEFONE
+            =================================================== -->
+
+            <div class="form-row">
+
+              <div class="form-group">
+
+                <label for="email">
+                  <i class="fas fa-envelope"></i>
+                  E-mail
+                </label>
+
+                <input type="email" id="email" placeholder="seu@email.com" autocomplete="email" required />
+
+              </div>
+
+
+              <div class="form-group">
+
+                <label for="phone">
+                  <i class="fas fa-phone"></i>
+                  Telefone
+                </label>
+
+                <input type="tel" id="phone" placeholder="(11) 99999-9999" autocomplete="tel" maxlength="15" required />
+
+              </div>
+
+            </div>
+
+
+            <!-- ==================================================
+                 SENHA
+            =================================================== -->
+
+            <div class="form-row">
+
+              <div class="form-group">
+
+                <label for="password">
+                  <i class="fas fa-lock"></i>
+                  Senha
+                </label>
+
+                <input type="password" id="password" placeholder="Crie uma senha forte" autocomplete="new-password"
+                  minlength="8" required />
+
+                <small class="password-hint">
+                  Mínimo de 8 caracteres, contendo letras e números.
+                </small>
+
+              </div>
+
+
+              <div class="form-group">
+
+                <label for="confirmPassword">
+                  <i class="fas fa-check-circle"></i>
+                  Confirmar senha
+                </label>
+
+                <input type="password" id="confirmPassword" placeholder="Confirme sua senha" autocomplete="new-password"
+                  minlength="8" required />
+
+              </div>
+
+            </div>
+
+
+            <!-- ==================================================
+                 PLANO
+            =================================================== -->
+
+            <div class="form-group full-width">
+
+              <label for="planSelect">
+                <i class="fas fa-crown"></i>
+                Escolha seu plano
+              </label>
+
+              <select id="planSelect" required>
+
+                <option value="" disabled selected>
+                  Selecione um plano...
+                </option>
+
+
+                <!-- ANUAL -->
+
+                <option value="anual-basic" data-plano="Basic" data-periodo="Anual" data-valor="89.90">
+                  Anual - Plano Basic - R$ 89,90/mês
+                </option>
+
+                <option value="anual-premium" data-plano="Premium" data-periodo="Anual" data-valor="119.90">
+                  Anual - Plano Premium - R$ 119,90/mês
+                </option>
+
+                <option value="anual-master" data-plano="Master" data-periodo="Anual" data-valor="149.90">
+                  Anual - Plano Master - R$ 149,90/mês
+                </option>
+
+
+                <!-- TRIMESTRAL -->
+
+                <option value="trimestral-basic" data-plano="Basic" data-periodo="Trimestral" data-valor="99.90">
+                  Trimestral - Plano Basic - R$ 99,90/mês
+                </option>
+
+                <option value="trimestral-premium" data-plano="Premium" data-periodo="Trimestral" data-valor="139.90">
+                  Trimestral - Plano Premium - R$ 139,90/mês
+                </option>
+
+                <option value="trimestral-master" data-plano="Master" data-periodo="Trimestral" data-valor="169.90">
+                  Trimestral - Plano Master - R$ 169,90/mês
+                </option>
+
+
+                <!-- MENSAL -->
+
+                <option value="mensal-basic" data-plano="Basic" data-periodo="Mensal" data-valor="119.90">
+                  Mensal - Plano Basic - R$ 119,90/mês
+                </option>
+
+                <option value="mensal-premium" data-plano="Premium" data-periodo="Mensal" data-valor="159.90">
+                  Mensal - Plano Premium - R$ 159,90/mês
+                </option>
+
+                <option value="mensal-master" data-plano="Master" data-periodo="Mensal" data-valor="189.90">
+                  Mensal - Plano Master - R$ 189,90/mês
+                </option>
+
+              </select>
+
+            </div>
+
+
+            <!-- ==================================================
+                 UNIDADE
+            =================================================== -->
+
+            <div class="form-group full-width">
+
+              <label for="academySelect">
+                <i class="fas fa-map-marker-alt"></i>
+                Unidade SenseActive
+              </label>
+
+              <select id="academySelect" required>
+
+                <option value="" disabled selected>
+                  Selecione uma unidade...
+                </option>
+
+                <option value="itatiba">
+                  Itatiba - Matriz
+                </option>
+
+                <option value="campinas">
+                  Campinas - Shopping Iguatemi
+                </option>
+
+                <option value="jundiai">
+                  Jundiaí - Maxi Shopping
+                </option>
+
+                <option value="sao-paulo">
+                  São Paulo - Paulista
+                </option>
+
+              </select>
+
+            </div>
+
+
+            <!-- ==================================================
+                 TERMOS DE USO E POLÍTICA DE PRIVACIDADE
+            =================================================== -->
+
+            <div class="form-group full-width checkbox-group" id="termsGroup">
+
+              <div class="terms-check">
+
+                <input type="checkbox" id="terms" />
+
+                <label for="terms">
+
+                  Li e concordo com os
+
+                  <a href="#" class="terms-link" data-modal="termsModal">
+                    Termos de Uso
+                  </a>
+
+                  e a
+
+                  <a href="#" class="terms-link" data-modal="privacyModal">
+                    Política de Privacidade
+                  </a>
+
+                  da SenseActive.
+
+                </label>
+
+              </div>
+
+              <small class="terms-error" id="termsError">
+
+                <i class="fas fa-exclamation-circle"></i>
+
+                Você precisa aceitar os Termos de Uso e a
+                Política de Privacidade para realizar o cadastro.
+
+              </small>
+
+            </div>
+
+
+            <!-- ==================================================
+                 BOTÃO
+            =================================================== -->
+
+            <button type="submit" class="btn btn-submit" id="submitButton">
+
+              Quero ser SenseActive!
+
+            </button>
+
+          </form>
+
+
+          <!-- ====================================================
+               LOGIN
+          ===================================================== -->
+
+          <div class="member-footer">
+
+            <p>
+
+              Já é membro?
+
+              <a href="cliente.html" target="_blank">
+
+                Faça login no Espaço do Cliente
+
+              </a>
+
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- ======================================================
+             LADO DIREITO
+        ======================================================= -->
+
+        <div class="member-info-side">
+
+          <div class="info-box">
+
+            <h3>
+
+              <i class="fas fa-gem"></i>
+
+              Por que ser SenseActive?
+
+            </h3>
+
+
+            <ul>
+
+              <li>
+                <i class="fas fa-check-circle"></i>
+                Acompanhamento inteligente
+              </li>
+
+              <li>
+                <i class="fas fa-check-circle"></i>
+                Treinos personalizados
+              </li>
+
+              <li>
+                <i class="fas fa-check-circle"></i>
+                Equipamentos de última geração
+              </li>
+
+              <li>
+                <i class="fas fa-check-circle"></i>
+                Comunidade exclusiva
+              </li>
+
+              <li>
+                <i class="fas fa-check-circle"></i>
+                Resultados comprovados
+              </li>
+
+            </ul>
+
+
+            <div class="testimonial">
+
+              <p>
+
+                <i class="fas fa-quote-left"></i>
+
+                A SenseActive mudou minha forma de treinar.
+                Tecnologia e motivação todos os dias!
+
+                <i class="fas fa-quote-right"></i>
+
+              </p>
+
+              <span>
+                — Ana Carolina, membro desde 2025
+              </span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- ======================================================
+           BENEFÍCIOS
+      ======================================================= -->
+
+      <div class="benefits-section">
+
+
+        <div class="benefit-item">
+
+          <i class="fas fa-wifi"></i>
+
+          <h4>
+            Tecnologia de Ponta
+          </h4>
+
+          <p>
+            Equipamentos com sensores inteligentes e análise
+            de desempenho em tempo real.
+          </p>
+
+        </div>
+
+
+        <div class="benefit-item">
+
+          <i class="fas fa-user-graduate"></i>
+
+          <h4>
+            Profissionais Especializados
+          </h4>
+
+          <p>
+            Treinadores capacitados para guiar sua evolução
+            com segurança e eficiência.
+          </p>
+
+        </div>
+
+
+        <div class="benefit-item">
+
+          <i class="fas fa-mobile-alt"></i>
+
+          <h4>
+            App Exclusivo
+          </h4>
+
+          <p>
+            Acompanhe treinos, resultados e interaja com
+            a comunidade SenseActive.
+          </p>
+
+        </div>
+
+
+        <div class="benefit-item">
+
+          <i class="fas fa-clock"></i>
+
+          <h4>
+            Horário Flexível
+          </h4>
+
+          <p>
+            Academias abertas de segunda a domingo, com
+            horários estendidos para sua rotina.
+          </p>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </main>
+
+
+  <!-- ==========================================================
+       FOOTER
+  =========================================================== -->
+
+  <footer class="footer">
+
+    <div class="footer-container">
+
+
+      <div class="footer-logo">
+
+        <a href="index.html">
+
+          <img src="/frontend/img/logo.png" alt="SenseActiv">
+
+        </a>
+
+      </div>
+
+
+      <div class="footer-links">
+
+
+        <div class="footer-column">
+
+          <h3>Navegação</h3>
+
+          <a href="index.html">
+            Home
+          </a>
+
+          <a href="sobre.html">
+            Sobre
+          </a>
+
+          <a href="cliente.html" target="_blank">
+
+            Espaço do cliente
+
+          </a>
+
+          <a href="membro.html">
+            Seja Membro
+          </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+          <h3>Explore</h3>
+
+          <a href="servicos.html">
+            Serviços
+          </a>
+
+          <a href="planos.html">
+            Planos
+          </a>
+
+          <a href="sustentabilidade.html">
+            Sustentabilidade
+          </a>
+
+        </div>
+
+
+        <div class="footer-column footer-contact">
+
+          <h3>Contato</h3>
+
+          <a href="tel:+5511999999999">
+            (11) 99999-9999
+          </a>
+
+          <a href="mailto:contato@senseactiv.com.br">
+            contato@senseactiv.com.br
+          </a>
+
+          <p>
+            R. Alfredo Massareti, 191 - Lot. Rei de Ouro
+          </p>
+
+          <p>
+            Itatiba - SP, 13251-360
+          </p>
+
+        </div>
+
+
+        <div class="footer-social-column">
+
+          <h3>Redes Sociais</h3>
+
+          <div class="social-icons">
+
+            <a href="https://www.instagram.com/" aria-label="Instagram">
+
+              <i class="fab fa-instagram"></i>
+
+            </a>
+
+
+            <a href="https://web.whatsapp.com/" aria-label="WhatsApp">
+
+              <i class="fab fa-whatsapp"></i>
+
+            </a>
+
+
+            <a href="https://www.tiktok.com/pt-BR/" aria-label="TikTok">
+
+              <i class="fab fa-tiktok"></i>
+
+            </a>
+
+
+            <a href="https://www.youtube.com/" aria-label="YouTube">
+
+              <i class="fab fa-youtube"></i>
+
+            </a>
+
+          </div>
+
+        </div>
+
+
+      </div>
+
+
+      <div class="footer-bottom">
+
+        <p>
+          © 2026 SenseActiv. Todos os direitos reservados.
+        </p>
+
+        <p>
+          CNPJ: 00.000.000/0000-00
+        </p>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- ==========================================================
+       MODAL — TERMOS DE USO
+  =========================================================== -->
+
+  <div class="legal-modal" id="termsModal" aria-hidden="true">
+
+    <div class="legal-modal-box">
+
+      <div class="legal-modal-header">
+
+        <div>
+
+          <i class="fas fa-file-contract"></i>
+
+          <h2>
+            Termos de Uso
+          </h2>
+
+        </div>
+
+        <button type="button" class="legal-close" aria-label="Fechar">
+
+          &times;
+
+        </button>
+
+      </div>
+
+
+      <div class="legal-content">
+
+        <h3>
+          1. Aceitação dos termos
+        </h3>
+
+        <p>
+          Ao realizar seu cadastro na SenseActive, você declara
+          que leu e concorda com estes Termos de Uso e com as
+          condições apresentadas no momento da contratação.
+        </p>
+
+
+        <h3>
+          2. Cadastro
+        </h3>
+
+        <p>
+          As informações fornecidas durante o cadastro devem ser
+          verdadeiras, completas e atualizadas. O usuário é
+          responsável pela segurança de seus dados de acesso.
+        </p>
+
+
+        <h3>
+          3. Utilização dos serviços
+        </h3>
+
+        <p>
+          O acesso aos serviços da SenseActive estará de acordo
+          com o plano contratado, a unidade escolhida e as regras
+          de utilização da academia.
+        </p>
+
+
+        <h3>
+          4. Responsabilidades
+        </h3>
+
+        <p>
+          O usuário compromete-se a utilizar os espaços,
+          equipamentos e serviços da SenseActive de maneira
+          adequada e respeitosa.
+        </p>
+
+
+        <h3>
+          5. Alterações
+        </h3>
+
+        <p>
+          Estes termos poderão ser atualizados quando necessário.
+          A versão vigente estará disponível para consulta.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- ==========================================================
+       MODAL — POLÍTICA DE PRIVACIDADE
+  =========================================================== -->
+
+  <div class="legal-modal" id="privacyModal" aria-hidden="true">
+
+    <div class="legal-modal-box">
+
+      <div class="legal-modal-header">
+
+        <div>
+
+          <i class="fas fa-shield-alt"></i>
+
+          <h2>
+            Política de Privacidade
+          </h2>
+
+        </div>
+
+        <button type="button" class="legal-close" aria-label="Fechar">
+
+          &times;
+
+        </button>
+
+      </div>
+
+
+      <div class="legal-content">
+
+        <h3>
+          1. Dados coletados
+        </h3>
+
+        <p>
+          Durante o cadastro, poderão ser coletados dados como
+          nome, data de nascimento, e-mail, telefone, plano
+          contratado e unidade escolhida.
+        </p>
+
+
+        <h3>
+          2. Utilização dos dados
+        </h3>
+
+        <p>
+          Os dados são utilizados para realizar o cadastro,
+          administrar a contratação do plano, prestar atendimento
+          e manter a comunicação relacionada aos serviços.
+        </p>
+
+
+        <h3>
+          3. Segurança
+        </h3>
+
+        <p>
+          A SenseActive busca adotar medidas adequadas para
+          proteger as informações fornecidas pelos usuários
+          contra acessos não autorizados.
+        </p>
+
+
+        <h3>
+          4. Compartilhamento
+        </h3>
+
+        <p>
+          Os dados não serão comercializados. Eventuais
+          compartilhamentos poderão ocorrer quando necessários
+          para a prestação dos serviços ou quando exigidos por lei.
+        </p>
+
+
+        <h3>
+          5. Direitos do usuário
+        </h3>
+
+        <p>
+          O usuário poderá solicitar informações sobre o tratamento
+          de seus dados e exercer os direitos previstos na
+          legislação aplicável.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- ==========================================================
+       MODAL — CADASTRO REALIZADO
+  =========================================================== -->
+
+  <div class="success-modal" id="successModal" aria-hidden="true">
+
+    <div class="success-card">
+
+      <div class="success-icon">
+
+        <i class="fas fa-check"></i>
+
+      </div>
+
+
+      <span class="success-label">
+        SENSEACTIVE
+      </span>
+
+
+      <h2>
+        Cadastro realizado!
+      </h2>
+
+
+      <p>
+        Seja muito bem-vindo(a) à SenseActive.
+        Seu cadastro foi enviado com sucesso.
+      </p>
+
+
+      <div class="success-info">
+
+        <div>
+
+          <span>
+            Plano
+          </span>
+
+          <strong id="successPlan">
+            —
+          </strong>
+
+        </div>
+
+
+        <div>
+
+          <span>
+            Período
+          </span>
+
+          <strong id="successPeriod">
+            —
+          </strong>
+
+        </div>
+
+
+        <div>
+
+          <span>
+            Unidade
+          </span>
+
+          <strong id="successUnit">
+            —
+          </strong>
+
+        </div>
+
+      </div>
+
+
+      <button type="button" class="success-button" id="successButton">
+
+        Continuar
+
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- ==========================================================
+       MODAL — ERRO
+  =========================================================== -->
+
+  <div class="error-modal" id="errorModal" aria-hidden="true">
+
+    <div class="error-card">
+
+      <div class="error-icon">
+
+        <i class="fas fa-exclamation"></i>
+
+      </div>
+
+
+      <span class="error-label">
+        SENSEACTIVE
+      </span>
+
+
+      <h2>
+        Não foi possível concluir
+      </h2>
+
+
+      <p id="errorMessage">
+        Ocorreu um erro ao realizar o cadastro.
+      </p>
+
+
+      <button type="button" class="error-button" id="errorButton">
+
+        Tentar novamente
+
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- ==========================================================
+       ESTILOS DOS MODAIS E TERMOS
+  =========================================================== -->
+
+  <style>
+    /* ========================================================
+       TERMOS
+    ======================================================== */
+
+    .checkbox-group {
+      margin-top: 8px;
+    }
+
+
+    .terms-check {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+
+    .terms-check input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+
+      min-width: 18px;
+
+      margin-top: 3px;
+
+      accent-color: #79e0b2;
+
+      cursor: pointer;
+    }
+
+
+    .terms-check label {
+      color: rgba(255, 255, 255, 0.68);
+
+      font-size: 13px;
+
+      line-height: 1.6;
+
+      cursor: pointer;
+    }
+
+
+    .terms-link {
+      color: #79e0b2 !important;
+
+      text-decoration: underline;
+
+      text-underline-offset: 3px;
+
+      cursor: pointer;
+
+      transition: opacity 0.25s ease;
+    }
+
+
+    .terms-link:hover {
+      opacity: 0.7;
+    }
+
+
+    .terms-error {
+      display: none;
+
+      margin-top: 9px;
+
+      color: #ff8c8c;
+
+      font-size: 12px;
+
+      line-height: 1.5;
+    }
+
+
+    .terms-error i {
+      margin-right: 4px;
+    }
+
+
+    .checkbox-group.error {
+      padding: 12px;
+
+      border-radius: 12px;
+
+      border: 1px solid rgba(255, 100, 100, 0.28);
+
+      background: rgba(255, 70, 70, 0.04);
+    }
+
+
+    .checkbox-group.error .terms-error {
+      display: block;
+    }
+
+
+    /* ========================================================
+       BOTÃO DESABILITADO
+    ======================================================== */
+
+    .btn-submit:disabled {
+      opacity: 0.45;
+
+      cursor: not-allowed;
+
+      transform: none !important;
+
+      box-shadow: none !important;
+    }
+
+
+    /* ========================================================
+       MODAIS LEGAIS
+    ======================================================== */
+
+    .legal-modal {
+      position: fixed;
+
+      inset: 0;
+
+      z-index: 9998;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      padding: 20px;
+
+      background: rgba(0, 0, 0, 0.78);
+
+      backdrop-filter: blur(12px);
+
+      -webkit-backdrop-filter: blur(12px);
+
+      opacity: 0;
+
+      visibility: hidden;
+
+      transition:
+        opacity 0.25s ease,
+        visibility 0.25s ease;
+    }
+
+
+    .legal-modal.active {
+      opacity: 1;
+
+      visibility: visible;
+    }
+
+
+    .legal-modal-box {
+      width: 100%;
+
+      max-width: 650px;
+
+      max-height: 82vh;
+
+      overflow: hidden;
+
+      background: #101713;
+
+      border: 1px solid rgba(121, 224, 178, 0.18);
+
+      border-radius: 20px;
+
+      box-shadow:
+        0 30px 90px rgba(0, 0, 0, 0.6);
+
+      transform: translateY(20px);
+
+      transition: transform 0.3s ease;
+    }
+
+
+    .legal-modal.active .legal-modal-box {
+      transform: translateY(0);
+    }
+
+
+    .legal-modal-header {
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      padding: 22px 25px;
+
+      border-bottom:
+        1px solid rgba(255, 255, 255, 0.07);
+    }
+
+
+    .legal-modal-header>div {
+      display: flex;
+
+      align-items: center;
+
+      gap: 12px;
+    }
+
+
+    .legal-modal-header i {
+      color: #79e0b2;
+
+      font-size: 18px;
+    }
+
+
+    .legal-modal-header h2 {
+      margin: 0;
+
+      color: #ffffff;
+
+      font-size: 20px;
+    }
+
+
+    .legal-close {
+      width: 36px;
+
+      height: 36px;
+
+      border: none;
+
+      border-radius: 50%;
+
+      background:
+        rgba(255, 255, 255, 0.05);
+
+      color:
+        rgba(255, 255, 255, 0.65);
+
+      font-size: 24px;
+
+      cursor: pointer;
+
+      transition: 0.2s ease;
+    }
+
+
+    .legal-close:hover {
+      color: #79e0b2;
+
+      background:
+        rgba(121, 224, 178, 0.08);
+    }
+
+
+    .legal-content {
+      max-height: calc(82vh - 82px);
+
+      overflow-y: auto;
+
+      padding: 25px;
+    }
+
+
+    .legal-content h3 {
+      margin: 0 0 8px;
+
+      color: #79e0b2;
+
+      font-size: 15px;
+    }
+
+
+    .legal-content p {
+      margin: 0 0 22px;
+
+      color:
+        rgba(255, 255, 255, 0.62);
+
+      font-size: 14px;
+
+      line-height: 1.7;
+    }
+
+
+    /* ========================================================
+       MODAL DE SUCESSO
+    ======================================================== */
+
+    .success-modal {
+      position: fixed;
+
+      inset: 0;
+
+      z-index: 10000;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      padding: 20px;
+
+      background:
+        rgba(0, 0, 0, 0.82);
+
+      backdrop-filter: blur(12px);
+
+      -webkit-backdrop-filter: blur(12px);
+
+      opacity: 0;
+
+      visibility: hidden;
+
+      transition:
+        opacity 0.25s ease,
+        visibility 0.25s ease;
+    }
+
+
+    .success-modal.active {
+      opacity: 1;
+
+      visibility: visible;
+    }
+
+
+    .success-card {
+      width: 100%;
+
+      max-width: 430px;
+
+      padding: 38px 35px;
+
+      background: #101713;
+
+      border:
+        1px solid rgba(121, 224, 178, 0.18);
+
+      border-radius: 22px;
+
+      text-align: center;
+
+      box-shadow:
+        0 30px 100px rgba(0, 0, 0, 0.6);
+
+      transform:
+        scale(0.96) translateY(15px);
+
+      transition:
+        transform 0.3s ease;
+    }
+
+
+    .success-modal.active .success-card {
+      transform:
+        scale(1) translateY(0);
+    }
+
+
+    .success-icon {
+      width: 68px;
+
+      height: 68px;
+
+      margin: 0 auto 20px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      border-radius: 50%;
+
+      color: #79e0b2;
+
+      font-size: 28px;
+
+      background:
+        rgba(121, 224, 178, 0.07);
+
+      border:
+        1px solid rgba(121, 224, 178, 0.25);
+    }
+
+
+    .success-label {
+      display: block;
+
+      margin-bottom: 8px;
+
+      color: #79e0b2;
+
+      font-size: 10px;
+
+      font-weight: 800;
+
+      letter-spacing: 3px;
+    }
+
+
+    .success-card h2 {
+      margin: 0 0 10px;
+
+      color: #ffffff;
+
+      font-size: 27px;
+    }
+
+
+    .success-card>p {
+      margin: 0 auto 25px;
+
+      max-width: 330px;
+
+      color:
+        rgba(255, 255, 255, 0.58);
+
+      font-size: 14px;
+
+      line-height: 1.6;
+    }
+
+
+    .success-info {
+      margin-bottom: 25px;
+
+      padding: 5px 17px;
+
+      border-radius: 14px;
+
+      background:
+        rgba(255, 255, 255, 0.025);
+
+      border:
+        1px solid rgba(255, 255, 255, 0.06);
+
+      text-align: left;
+    }
+
+
+    .success-info div {
+      display: flex;
+
+      justify-content: space-between;
+
+      align-items: center;
+
+      padding: 12px 0;
+
+      gap: 15px;
+    }
+
+
+    .success-info div+div {
+      border-top:
+        1px solid rgba(255, 255, 255, 0.05);
+    }
+
+
+    .success-info span {
+      color:
+        rgba(255, 255, 255, 0.38);
+
+      font-size: 12px;
+    }
+
+
+    .success-info strong {
+      color: #ffffff;
+
+      font-size: 13px;
+
+      text-align: right;
+    }
+
+
+    .success-button {
+      width: 100%;
+
+      padding: 14px 20px;
+
+      border: none;
+
+      border-radius: 999px;
+
+      background: #79e0b2;
+
+      color: #08100c;
+
+      font-size: 14px;
+
+      font-weight: 800;
+
+      cursor: pointer;
+
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+
+    .success-button:hover {
+      transform: translateY(-2px);
+
+      box-shadow:
+        0 10px 30px rgba(121, 224, 178, 0.18);
+    }
+
+
+    /* ========================================================
+       MODAL DE ERRO
+    ======================================================== */
+
+    .error-modal {
+      position: fixed;
+
+      inset: 0;
+
+      z-index: 10001;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      padding: 20px;
+
+      background:
+        rgba(0, 0, 0, 0.82);
+
+      backdrop-filter: blur(12px);
+
+      -webkit-backdrop-filter: blur(12px);
+
+      opacity: 0;
+
+      visibility: hidden;
+
+      transition:
+        opacity 0.25s ease,
+        visibility 0.25s ease;
+    }
+
+
+    .error-modal.active {
+      opacity: 1;
+
+      visibility: visible;
+    }
+
+
+    .error-card {
+      width: 100%;
+
+      max-width: 430px;
+
+      padding: 38px 35px;
+
+      background: #101713;
+
+      border:
+        1px solid rgba(255, 120, 120, 0.2);
+
+      border-radius: 22px;
+
+      text-align: center;
+
+      box-shadow:
+        0 30px 100px rgba(0, 0, 0, 0.6);
+
+      transform:
+        scale(0.96) translateY(15px);
+
+      transition:
+        transform 0.3s ease;
+    }
+
+
+    .error-modal.active .error-card {
+      transform:
+        scale(1) translateY(0);
+    }
+
+
+    .error-icon {
+      width: 68px;
+
+      height: 68px;
+
+      margin: 0 auto 20px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      border-radius: 50%;
+
+      color: #ff9999;
+
+      font-size: 27px;
+
+      background:
+        rgba(255, 100, 100, 0.07);
+
+      border:
+        1px solid rgba(255, 100, 100, 0.2);
+    }
+
+
+    .error-label {
+      display: block;
+
+      margin-bottom: 8px;
+
+      color: #79e0b2;
+
+      font-size: 10px;
+
+      font-weight: 800;
+
+      letter-spacing: 3px;
+    }
+
+
+    .error-card h2 {
+      margin: 0 0 10px;
+
+      color: #ffffff;
+
+      font-size: 25px;
+    }
+
+
+    .error-card p {
+      margin: 0 auto 25px;
+
+      max-width: 340px;
+
+      color:
+        rgba(255, 255, 255, 0.58);
+
+      font-size: 14px;
+
+      line-height: 1.6;
+    }
+
+
+    .error-button {
+      width: 100%;
+
+      padding: 14px 20px;
+
+      border: none;
+
+      border-radius: 999px;
+
+      background: #79e0b2;
+
+      color: #08100c;
+
+      font-size: 14px;
+
+      font-weight: 800;
+
+      cursor: pointer;
+
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+
+    .error-button:hover {
+      transform: translateY(-2px);
+
+      box-shadow:
+        0 10px 30px rgba(121, 224, 178, 0.18);
+    }
+
+
+    /* ========================================================
+       RESPONSIVO
+    ======================================================== */
+
+    @media (max-width: 600px) {
+
+      .legal-modal-box {
+        max-height: 88vh;
+      }
+
+
+      .legal-content {
+        max-height:
+          calc(88vh - 82px);
+      }
+
+
+      .success-card,
+      .error-card {
+        padding: 30px 22px;
+      }
+
+
+      .success-card h2,
+      .error-card h2 {
+        font-size: 24px;
+      }
+
+    }
+  </style>
+
+
+  <!-- ==========================================================
+       SCRIPT PRINCIPAL
+  =========================================================== -->
+
+  <script src="/frontend/public/script.js"></script>
+
+
+  <!-- ==========================================================
+       SCRIPT DO CADASTRO
+  =========================================================== -->
+
+  <script>
+
+    document.addEventListener(
+      'DOMContentLoaded',
+      function () {
+
+
+        /* ======================================================
+           ELEMENTOS
+        ====================================================== */
+
+        const form =
+          document.getElementById('memberForm');
+
+        const fullName =
+          document.getElementById('fullName');
+
+        const birthDate =
+          document.getElementById('birthDate');
+
+        const email =
+          document.getElementById('email');
+
+        const phone =
+          document.getElementById('phone');
+
+        const password =
+          document.getElementById('password');
+
+        const confirmPassword =
+          document.getElementById('confirmPassword');
+
+        const planSelect =
+          document.getElementById('planSelect');
+
+        const academySelect =
+          document.getElementById('academySelect');
+
+        const terms =
+          document.getElementById('terms');
+
+        const termsGroup =
+          document.getElementById('termsGroup');
+
+        const btn =
+          document.getElementById('submitButton');
+
+        const successModal =
+          document.getElementById('successModal');
+
+        const errorModal =
+          document.getElementById('errorModal');
+
+        const errorMessage =
+          document.getElementById('errorMessage');
+
+
+        /* ======================================================
+           DATA MÁXIMA
+        ====================================================== */
+
+        const hoje =
+          new Date();
+
+        const anoAtual =
+          hoje.getFullYear();
+
+        const mesAtual =
+          String(
+            hoje.getMonth() + 1
+          ).padStart(2, '0');
+
+        const diaAtual =
+          String(
+            hoje.getDate()
+          ).padStart(2, '0');
+
+        birthDate.max =
+          `${anoAtual}-${mesAtual}-${diaAtual}`;
+
+
+        /* ======================================================
+           BOTÃO — TERMOS OBRIGATÓRIOS
+        ====================================================== */
+
+        function atualizarBotao() {
+
+          btn.disabled =
+            !terms.checked;
+
+        }
+
+        atualizarBotao();
+
+
+        terms.addEventListener(
+          'change',
+          function () {
+
+            atualizarBotao();
+
+            if (terms.checked) {
+
+              termsGroup.classList.remove(
+                'error'
+              );
+
+            }
+
+          }
+        );
+
+
+        /* ======================================================
+           MÁSCARA DE TELEFONE
+        ====================================================== */
+
+        phone.addEventListener(
+          'input',
+          function (e) {
+
+            let value =
+              e.target.value.replace(
+                /\D/g,
+                ''
+              );
+
+            if (value.length > 11) {
+
+              value =
+                value.slice(0, 11);
+
+            }
+
+
+            if (value.length > 10) {
+
+              value =
+                value.replace(
+                  /^(\d{2})(\d{5})(\d{4})/,
+                  '($1) $2-$3'
+                );
+
+            }
+
+            else if (value.length > 6) {
+
+              value =
+                value.replace(
+                  /^(\d{2})(\d{4})(\d{0,4})/,
+                  '($1) $2-$3'
+                );
+
+            }
+
+            else if (value.length > 2) {
+
+              value =
+                value.replace(
+                  /^(\d{2})(\d{0,5})/,
+                  '($1) $2'
+                );
+
+            }
+
+            e.target.value =
+              value;
+
+          }
+        );
+
+
+        /* ======================================================
+           CALCULAR IDADE
+        ====================================================== */
+
+        function calcularIdade(
+          dataNascimento
+        ) {
+
+          const nascimento =
+            new Date(
+              dataNascimento +
+              'T00:00:00'
+            );
+
+          const hoje =
+            new Date();
+
+          let idade =
+            hoje.getFullYear() -
+            nascimento.getFullYear();
+
+          const mes =
+            hoje.getMonth() -
+            nascimento.getMonth();
+
+          if (
+            mes < 0 ||
+            (
+              mes === 0 &&
+              hoje.getDate() <
+              nascimento.getDate()
+            )
+          ) {
+
+            idade--;
+
+          }
+
+          return idade;
+
+        }
+
+
+        /* ======================================================
+           VALIDAR IDADE
+        ====================================================== */
+
+        function validarIdade() {
+
+          if (!birthDate.value) {
+
+            birthDate.setCustomValidity(
+              'Informe sua data de nascimento.'
+            );
+
+            return false;
+
+          }
+
+
+          const idade =
+            calcularIdade(
+              birthDate.value
+            );
+
+
+          if (idade < 16) {
+
+            birthDate.setCustomValidity(
+              'É necessário ter pelo menos 16 anos para se cadastrar.'
+            );
+
+            return false;
+
+          }
+
+
+          birthDate.setCustomValidity('');
+
+          return true;
+
+        }
+
+
+        /* ======================================================
+           VALIDAR SENHA
+        ====================================================== */
+
+        function validarSenha() {
+
+          const senha =
+            password.value;
+
+
+          if (senha.length < 8) {
+
+            password.setCustomValidity(
+              'A senha deve possuir pelo menos 8 caracteres.'
+            );
+
+            return false;
+
+          }
+
+
+          if (!/[A-Za-z]/.test(senha)) {
+
+            password.setCustomValidity(
+              'A senha deve conter pelo menos uma letra.'
+            );
+
+            return false;
+
+          }
+
+
+          if (!/[0-9]/.test(senha)) {
+
+            password.setCustomValidity(
+              'A senha deve conter pelo menos um número.'
+            );
+
+            return false;
+
+          }
+
+
+          password.setCustomValidity('');
+
+          return true;
+
+        }
+
+
+        /* ======================================================
+           CONFIRMAR SENHA
+        ====================================================== */
+
+        function validarConfirmacaoSenha() {
+
+          if (
+            password.value !==
+            confirmPassword.value
+          ) {
+
+            confirmPassword.setCustomValidity(
+              'As senhas não coincidem.'
+            );
+
+            return false;
+
+          }
+
+
+          confirmPassword.setCustomValidity('');
+
+          return true;
+
+        }
+
+
+        /* ======================================================
+           VALIDAR TELEFONE
+        ====================================================== */
+
+        function validarTelefone() {
+
+          const numero =
+            phone.value.replace(
+              /\D/g,
+              ''
+            );
+
+
+          if (
+            numero.length !== 10 &&
+            numero.length !== 11
+          ) {
+
+            phone.setCustomValidity(
+              'Informe um telefone válido.'
+            );
+
+            return false;
+
+          }
+
+
+          phone.setCustomValidity('');
+
+          return true;
+
+        }
+
+
+        /* ======================================================
+           VALIDAR NOME
+        ====================================================== */
+
+        function validarNome() {
+
+          const nome =
+            fullName.value.trim();
+
+
+          if (
+            nome.length < 5 ||
+            !nome.includes(' ')
+          ) {
+
+            fullName.setCustomValidity(
+              'Digite seu nome completo.'
+            );
+
+            return false;
+
+          }
+
+
+          fullName.setCustomValidity('');
+
+          return true;
+
+        }
+
+
+        /* ======================================================
+           MODAIS — TERMOS E PRIVACIDADE
+        ====================================================== */
+
+        document
+          .querySelectorAll('.terms-link')
+          .forEach(
+            function (link) {
+
+              link.addEventListener(
+                'click',
+                function (e) {
+
+                  e.preventDefault();
+
+                  const modalId =
+                    this.dataset.modal;
+
+                  const modal =
+                    document.getElementById(
+                      modalId
+                    );
+
+                  if (modal) {
+
+                    modal.classList.add(
+                      'active'
+                    );
+
+                    modal.setAttribute(
+                      'aria-hidden',
+                      'false'
+                    );
+
+                  }
+
+                }
+              );
+
+            }
+          );
+
+
+        /* ======================================================
+           FECHAR MODAIS LEGAIS
+        ====================================================== */
+
+        document
+          .querySelectorAll('.legal-modal')
+          .forEach(
+            function (modal) {
+
+              const close =
+                modal.querySelector(
+                  '.legal-close'
+                );
+
+
+              close.addEventListener(
+                'click',
+                function () {
+
+                  modal.classList.remove(
+                    'active'
+                  );
+
+                  modal.setAttribute(
+                    'aria-hidden',
+                    'true'
+                  );
+
+                }
+              );
+
+
+              modal.addEventListener(
+                'click',
+                function (e) {
+
+                  if (
+                    e.target === modal
+                  ) {
+
+                    modal.classList.remove(
+                      'active'
+                    );
+
+                    modal.setAttribute(
+                      'aria-hidden',
+                      'true'
+                    );
+
+                  }
+
+                }
+              );
+
+            }
+          );
+
+
+        /* ======================================================
+           FECHAR MODAL DE ERRO
+        ====================================================== */
+
+        document
+          .getElementById('errorButton')
+          .addEventListener(
+            'click',
+            function () {
+
+              errorModal.classList.remove(
+                'active'
+              );
+
+              errorModal.setAttribute(
+                'aria-hidden',
+                'true'
+              );
+
+            }
+          );
+
+
+        /* ======================================================
+           EVENTOS DE VALIDAÇÃO
+        ====================================================== */
+
+        birthDate.addEventListener(
+          'change',
+          validarIdade
+        );
+
+
+        password.addEventListener(
+          'input',
+          function () {
+
+            validarSenha();
+
+            validarConfirmacaoSenha();
+
+          }
+        );
+
+
+        confirmPassword.addEventListener(
+          'input',
+          validarConfirmacaoSenha
+        );
+
+
+        phone.addEventListener(
+          'blur',
+          validarTelefone
+        );
+
+
+        fullName.addEventListener(
+          'blur',
+          validarNome
+        );
+
+
+        /* ======================================================
+           ENVIO DO FORMULÁRIO
+        ====================================================== */
+
+        form.addEventListener(
+          'submit',
+          async function (e) {
+
+            e.preventDefault();
+
+
+            /* ----------------------------------------------
+               TERMOS — PRIMEIRA VALIDAÇÃO
+            ---------------------------------------------- */
+
+            if (!terms.checked) {
+
+              termsGroup.classList.add(
+                'error'
+              );
+
+              terms.focus();
+
+              return;
+
+            }
+
+
+            /* ----------------------------------------------
+               DEMAIS VALIDAÇÕES
+            ---------------------------------------------- */
+
+            const nomeValido =
+              validarNome();
+
+            const idadeValida =
+              validarIdade();
+
+            const senhaValida =
+              validarSenha();
+
+            const confirmacaoValida =
+              validarConfirmacaoSenha();
+
+            const telefoneValido =
+              validarTelefone();
+
+
+            if (
+              !nomeValido ||
+              !idadeValida ||
+              !senhaValida ||
+              !confirmacaoValida ||
+              !telefoneValido
+            ) {
+
+              form.reportValidity();
+
+              return;
+
+            }
+
+
+            /* ----------------------------------------------
+               PLANO
+            ---------------------------------------------- */
+
+            if (!planSelect.value) {
+
+              planSelect.setCustomValidity(
+                'Selecione um plano.'
+              );
+
+              planSelect.reportValidity();
+
+              planSelect.setCustomValidity('');
+
+              return;
+
+            }
+
+
+            /* ----------------------------------------------
+               UNIDADE
+            ---------------------------------------------- */
+
+            if (!academySelect.value) {
+
+              academySelect.setCustomValidity(
+                'Selecione uma unidade.'
+              );
+
+              academySelect.reportValidity();
+
+              academySelect.setCustomValidity('');
+
+              return;
+
+            }
+
+
+            /* ----------------------------------------------
+               INFORMAÇÕES DO PLANO
+            ---------------------------------------------- */
+
+            const planoSelecionado =
+              planSelect.options[
+              planSelect.selectedIndex
+              ];
+
+
+            const nomePlano =
+              planoSelecionado.dataset.plano;
+
+
+            const periodoPlano =
+              planoSelecionado.dataset.periodo;
+
+
+            const valorPlano =
+              planoSelecionado.dataset.valor;
+
+
+            /* ----------------------------------------------
+               INFORMAÇÕES DA UNIDADE
+            ---------------------------------------------- */
+
+            const unidadeSelecionada =
+              academySelect.options[
+              academySelect.selectedIndex
+              ];
+
+
+            const nomeUnidade =
+              unidadeSelecionada.textContent.trim();
+
+
+            /* ----------------------------------------------
+               IDADE
+            ---------------------------------------------- */
+
+            const idade =
+              calcularIdade(
+                birthDate.value
+              );
+
+
+            /* ----------------------------------------------
+               DADOS DO CLIENTE
+            ---------------------------------------------- */
+
+            const cliente = {
+
+              fullName:
+                fullName.value.trim(),
+
+              birthDate:
+                birthDate.value,
+
+              age:
+                idade,
+
+              email:
+                email.value.trim(),
+
+              phone:
+                phone.value,
+
+              plan:
+                nomePlano,
+
+              period:
+                periodoPlano,
+
+              value:
+                valorPlano,
+
+              academy:
+                academySelect.value
+
+            };
+
+
+            /* ----------------------------------------------
+               BOTÃO
+            ---------------------------------------------- */
+
+            const textoOriginal =
+              btn.innerHTML;
+
+
+            btn.disabled =
+              true;
+
+
+            btn.innerHTML =
+              '<i class="fas fa-spinner fa-spin"></i> Enviando cadastro...';
+
+
+            try {
+
+
+              /* --------------------------------------------
+                 ENVIAR PARA O BACKEND
+              -------------------------------------------- */
+
+              const resposta =
+                await fetch(
+                  'http://localhost:3000/cadastro',
+                  {
+
+                    method: 'POST',
+
+                    headers: {
+                      'Content-Type':
+                        'application/json'
+                    },
+
+                    body:
+                      JSON.stringify(
+                        cliente
+                      )
+
+                  }
+                );
+
+
+              let resultado = {};
+
+              try {
+
+                resultado =
+                  await resposta.json();
+
+              }
+
+              catch {
+
+                resultado = {};
+
+              }
+
+
+              if (!resposta.ok) {
+
+                throw new Error(
+                  resultado.mensagem ||
+                  'Não foi possível realizar o cadastro.'
+                );
+
+              }
+
+
+              /* --------------------------------------------
+                 SALVAR DADOS PARA O DEMO
+                 NÃO SALVA A SENHA
+              -------------------------------------------- */
+
+              let clientesSalvos = [];
+
+
+              try {
+
+                clientesSalvos =
+                  JSON.parse(
+                    localStorage.getItem(
+                      'senseActiveClientes'
+                    )
+                  ) || [];
+
+              }
+
+              catch {
+
+                clientesSalvos = [];
+
+              }
+
+
+              clientesSalvos.push({
+
+                nome:
+                  cliente.fullName,
+
+                nascimento:
+                  cliente.birthDate,
+
+                idade:
+                  cliente.age,
+
+                email:
+                  cliente.email,
+
+                telefone:
+                  cliente.phone,
+
+                plano:
+                  cliente.plan,
+
+                periodo:
+                  cliente.period,
+
+                valor:
+                  cliente.value,
+
+                unidade:
+                  nomeUnidade,
+
+                dataCadastro:
+                  new Date().toISOString()
+
+              });
+
+
+              localStorage.setItem(
+                'senseActiveClientes',
+                JSON.stringify(
+                  clientesSalvos
+                )
+              );
+
+
+              /* --------------------------------------------
+                 PREENCHER MODAL
+              -------------------------------------------- */
+
+              document.getElementById(
+                'successPlan'
+              ).textContent =
+                nomePlano;
+
+
+              document.getElementById(
+                'successPeriod'
+              ).textContent =
+                periodoPlano;
+
+
+              document.getElementById(
+                'successUnit'
+              ).textContent =
+                nomeUnidade;
+
+
+              /* --------------------------------------------
+                 MOSTRAR MODAL
+              -------------------------------------------- */
+
+              successModal.classList.add(
+                'active'
+              );
+
+              successModal.setAttribute(
+                'aria-hidden',
+                'false'
+              );
+
+
+              /* --------------------------------------------
+                 LIMPAR FORMULÁRIO
+              -------------------------------------------- */
+
+              form.reset();
+
+              termsGroup.classList.remove(
+                'error'
+              );
+
+              atualizarBotao();
+
+
+            }
+
+            catch (erro) {
+
+              console.error(
+                'Erro no cadastro:',
+                erro
+              );
+
+
+              errorMessage.textContent =
+                erro.message ||
+                'Não foi possível concluir o cadastro. Verifique se o servidor está funcionando e tente novamente.';
+
+
+              errorModal.classList.add(
+                'active'
+              );
+
+              errorModal.setAttribute(
+                'aria-hidden',
+                'false'
+              );
+
+            }
+
+            finally {
+
+              btn.disabled =
+                !terms.checked;
+
+              btn.innerHTML =
+                textoOriginal;
+
+            }
+
+          }
+        );
+
+
+        /* ======================================================
+           FECHAR MODAL DE SUCESSO
+        ====================================================== */
+
+        document
+          .getElementById('successButton')
+          .addEventListener(
+            'click',
+            function () {
+
+              successModal.classList.remove(
+                'active'
+              );
+
+              successModal.setAttribute(
+                'aria-hidden',
+                'true'
+              );
+
+            }
+          );
+
+
+        /* ======================================================
+           ESC FECHA OS MODAIS
+        ====================================================== */
+
+        document.addEventListener(
+          'keydown',
+          function (e) {
+
+            if (e.key !== 'Escape') {
+              return;
+            }
+
+
+            document
+              .querySelectorAll(
+                '.legal-modal.active'
+              )
+              .forEach(
+                function (modal) {
+
+                  modal.classList.remove(
+                    'active'
+                  );
+
+                  modal.setAttribute(
+                    'aria-hidden',
+                    'true'
+                  );
+
+                }
+              );
+
+
+            successModal.classList.remove(
+              'active'
+            );
+
+            successModal.setAttribute(
+              'aria-hidden',
+              'true'
+            );
+
+
+            errorModal.classList.remove(
+              'active'
+            );
+
+            errorModal.setAttribute(
+              'aria-hidden',
+              'true'
+            );
+
+          }
+        );
+
+
+      }
+
+    );
+
+  </script>
+
+</body>
+
+</html>
